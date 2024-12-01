@@ -1,5 +1,26 @@
 # WpfApp
 
+📁 WpfApp: Directory and File Server
+WpfApp은 Winsock2를 사용하여 C로 작성된 간단한 디렉토리 및 파일 서버입니다. 이 서버는 클라이언트의 요청을 수신하여 디렉토리 목록을 반환하거나 특정 명령에 따라 파일 관련 응답을 제공합니다.
+
+🛠️ 주요 기능
+디렉토리 목록 조회: 지정된 디렉토리의 파일과 폴더를 나열합니다.
+명령 기반 처리: GET_DIRECTORY 및 GET_FILES와 같은 명령을 지원합니다.
+경량 및 효율적: Winsock과 Windows API를 사용하여 높은 성능을 제공합니다.
+🖥️ 작동 방식
+서버는 클라이언트로부터 명령을 수신하며, 아래 명령들을 처리합니다.
+
+지원되는 명령
+GET_DIRECTORY|PATH=<directory_path>
+지정된 경로의 디렉토리 내용을 반환합니다.
+
+GET_FILES
+파일 관련 요청을 처리하기 위한 예약된 명령입니다. 현재는 단순히 확인 응답을 보냅니다.
+
+기타 명령
+알 수 없는 명령이 들어오면 Unknown command 메시지를 반환합니다.
+
+
 agent.c   
 #include <stdio.h>
 #include <stdlib.h>
